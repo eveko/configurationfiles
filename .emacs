@@ -19,7 +19,10 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1) 
 
-
+;;set super
+(setq w32-pass-lwindow-to-system nil)
+(setq w32-lwindow-modifier 'super)
+(w32-register-hot-key [s-])
 
 ;;Prevent unwanted windows to open
 (define-key minibuffer-inactive-mode-map [mouse-1] #'ignore)
@@ -33,7 +36,7 @@
    (quote
     (("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/"))))
- '(package-selected-packages (quote (spacemacs-theme ##))))
+ '(package-selected-packages (quote (markdown-mode ace-popup-menu spacemacs-theme ##))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
