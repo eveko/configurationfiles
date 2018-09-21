@@ -1,10 +1,10 @@
-#plugins#
+# plugins #
 
 
 ace-popup-menu
 spacemacs-theme
 markdown-mode
 
-#font used#
+# font used #
 
 https://github.com/source-foundry/Hack
