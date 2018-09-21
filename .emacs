@@ -5,6 +5,9 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;;Prevents the breaking of the hardlink
+(setq backup-by-copying t)
+
 (when (member "Hack" (font-family-list))
   (set-face-attribute 'default nil :font "Hack"))
 
@@ -12,9 +15,14 @@
 
 ;;disable startup hide unnecesary bars
 (setq inhibit-startup-screen t)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+(menu-bar-mode -1) 
+
+
 
 ;;Prevent unwanted windows to open
-(setq menu-bar-select-buffer-function 'switch-to-buffer)
+(define-key minibuffer-inactive-mode-map [mouse-1] #'ignore)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
