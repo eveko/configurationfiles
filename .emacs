@@ -44,4 +44,21 @@
  ;; If there is more than one, they won't work right.
  )
 
+;;set language proofing
+(setenv "LANG" "en_US, nl_NL")
+(setq-default  ispell-program-name "c:/msys64/mingw64/bin/hunspell.exe")
+(with-eval-after-load "ispell"
+  (setq ispell-really-hunspell t)
+  (setq ispell-program-name "hunspell")
+  (setq ispell-dictionary "en_US,nl_NL")
+  ;; ispell-set-spellchecker-params has to be called
+  ;; before ispell-hunspell-add-multi-dic will work
+  (ispell-set-spellchecker-params)
+  (ispell-hunspell-add-multi-dic "en_US,nl_NL"))
 
+
+;;keybindings - super
+(global-set-key (kbd "s-k") 'kill-buffer-and-window) ;; Kils buffer
+(global-set-key (kbd "s-e") 'eval-buffer) ;; Eval
+(global-set-key (kbd "s-<tab>") 'next-buffer) ;; Next buffer
+(global-set-key (kbd "s-`") 'previous-buffer) ;; previous buffer
